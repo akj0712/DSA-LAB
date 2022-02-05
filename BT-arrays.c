@@ -1,3 +1,9 @@
+// Design, develop and execute a program in C to create a Binary tree using arrays and display the tree.
+
+
+
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #define SZ 100
