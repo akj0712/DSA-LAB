@@ -1,9 +1,5 @@
 // Design, develop and execute a program in C to perform the following operation on Singly linked list a. Insert the node at a specific location b. Delete a node at the beginning of the list c. Display the list
 
-
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 

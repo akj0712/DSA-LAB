@@ -1,11 +1,7 @@
 // Design, develop and execute a program in C to create a Binary tree using arrays and display the tree.
 
-
-
-
-
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #define SZ 100
 
 void bt(int a[SZ], int ele)
@@ -22,20 +18,20 @@ void bt(int a[SZ], int ele)
         p = c;
         if (ele < a[c])
         {
-            c = 2*c + 1;
+            c = 2 * c + 1;
         }
         else
         {
-            c = 2*c + 2;
+            c = 2 * c + 2;
         }
     }
     if (ele < a[p])
     {
-        c = 2*p + 1;
+        c = 2 * p + 1;
     }
     else
     {
-        c = 2*p + 2;
+        c = 2 * p + 2;
     }
     a[c] = ele;
     printf("Constructed Binary Tree is\n");
@@ -51,17 +47,16 @@ void bt(int a[SZ], int ele)
 int main(void)
 {
     int n, a[SZ], i, ele;
-    for ( i = 0; i < SZ; i++)
+    for (i = 0; i < SZ; i++)
     {
         a[i] = '\0';
     }
     printf("Enter the number of data in a Binary Tree\n");
     scanf("%d", &n);
     printf("Enter the data in a Binary Tree\n");
-    for ( i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         scanf("%d", &ele);
         bt(a, ele);
     }
-    
 }

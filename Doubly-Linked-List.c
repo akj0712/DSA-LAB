@@ -1,11 +1,7 @@
 // Design, develop and execute a program in C to implement a doubly linked list where each node consists of integers. The program should support the following operations: a. Create a doubly linked list by adding each node at the front b. Delete the node of a given data If it is found, otherwise display appropriate message c. Display the contents of the list.
 
-
-
-
-
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 struct node
 {
@@ -15,9 +11,11 @@ struct node
 };
 
 typedef struct node *NODE;
-NODE first = NULL; NODE last = NULL;
+NODE first = NULL;
+NODE last = NULL;
 
-void insert(int info){
+void insert(int info)
+{
     NODE newNode;
     newNode = (NODE)malloc(sizeof(struct node));
     newNode->data = info;
@@ -34,7 +32,8 @@ void insert(int info){
     first = newNode;
 }
 
-void delete(int key){
+void delete (int key)
+{
     int flag = 0;
     NODE prev, cur, next;
     if (first == NULL)
@@ -72,7 +71,7 @@ void delete(int key){
         cur = NULL;
         return;
     }
-    
+
     cur = first->rlink;
     while (cur != last)
     {
@@ -90,14 +89,15 @@ void delete(int key){
         }
         cur = cur->rlink;
     }
-    
+
     if (flag == 0)
     {
         printf("\nKEY NOT FOUND\n");
     }
 }
 
-void display(){
+void display()
+{
     NODE temp;
     if (first == NULL)
     {
@@ -113,16 +113,14 @@ void display(){
             temp = temp->rlink;
         }
         printf("\n");
-        
     }
-    
 }
 
 int main()
 {
     int ch, info;
-    printf ("1:INSERT 2:DELETE 3:DISPLAY 4:EXIT\n");
-    for ( ; ; )
+    printf("1:INSERT 2:DELETE 3:DISPLAY 4:EXIT\n");
+    for (;;)
     {
         printf("Enter Your Choice: ");
         scanf("%d", &ch);
@@ -133,12 +131,12 @@ int main()
             scanf("%d", &info);
             insert(info);
             break;
-        
+
         case 2:
             printf("Enter the data to be deleted: ");
             scanf("%d", &info);
-            delete(info);
-            break; 
+            delete (info);
+            break;
 
         case 3:
             display();
